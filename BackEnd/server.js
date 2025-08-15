@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 import cors from 'cors'
 import taskModel from './Models/Task.js';
+import { fileURLToPath } from 'url';
+
 
 dotenv.config();
 
@@ -18,6 +20,12 @@ mongoose.connect(process.env.MONGO_URL)
 App.use(cors());  
 App.use(express.json());
 App.use(express.urlencoded({ extended: true }));
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, '../FrontEnd/dist')));
+
 
 
 App.post("/addTask", async (req, res)=>{
