@@ -23,8 +23,7 @@ App.use(express.urlencoded({ extended: true }));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname, '../FrontEnd/dist')));
+Aapp.use(express.static(path.join(__dirname, '../FrontEnd/dist')));
 
 
 
