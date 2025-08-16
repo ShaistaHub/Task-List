@@ -9,9 +9,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": " concurrently \"npm run dev --prefix BackEnd\" \"npm run dev --prefix FrontEnd\" "
-  },
-  "dependencies": {
-    "concurrently": "^9.2.0" 
-  },
-  "devDependencies": {}
+  }
 }
